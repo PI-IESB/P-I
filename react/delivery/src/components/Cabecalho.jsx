@@ -42,16 +42,16 @@ export default (props) => {
                                 <Nav.Link href="/"><Image className="bola" src="/img/home.png" /></Nav.Link>
                             </Nav.Item></Col>
                             <Col md={{ span: 0, offset: 0 }}><Nav.Item>
-                                <Nav.Link eventKey="link-1"><Image src="/img/cardapio.png" /></Nav.Link>
+                                <Nav.Link href="/cardapio"><Image src="/img/cardapio.png" /></Nav.Link>
                             </Nav.Item></Col>
                             <Col md={{ span: 0, offset: 0 }}><Nav.Item>
-                                <Nav.Link eventKey="link-2"><Image src="/img/perfil.png" /></Nav.Link>
+                                <Nav.Link href="link-2"><Image src="/img/perfil.png" /></Nav.Link>
                             </Nav.Item></Col>
                             <Col md={{ span: 0, offset: 0 }}><Nav.Item>
-                                <Nav.Link eventKey="link-2"><Image src="/img/sobre-nos.png" /></Nav.Link>
+                                <Nav.Link href="link-2"><Image src="/img/sobre-nos.png" /></Nav.Link>
                             </Nav.Item></Col>
                             <Col md={{ span: 3, offset: 0 }}><Nav.Item>
-                                <Nav.Link eventKey="link-2"><Image src="/img/meus-pedidos.png" /></Nav.Link>
+                                <Nav.Link href="link-2"><Image src="/img/meus-pedidos.png" /></Nav.Link>
                             </Nav.Item></Col>
                         </Nav>
                     </Container>

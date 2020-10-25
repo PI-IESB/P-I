@@ -6,7 +6,7 @@ import { Carousel, Row, Col } from 'react-bootstrap'
 export default () => {
   return (
     <Pagina>
-      <Row className="barrapreta" false="noGutters">
+      <Row false="noGutters">
         <Col >
           <Carousel>
             <Carousel.Item>

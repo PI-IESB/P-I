@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(207, 165, 12);
+    background-color: #FAC710;
 }
 .barra{
     background-color: #c91b1b;
@@ -7,8 +7,24 @@ body{
     border-color: #c91b1b;
     border-width: 8px ;
 }
+.bot{
+    padding-top:82%;
+	padding-left:30%;
+	padding-right:1%;
+	padding-bottom:1%;
+	max-width:1000px;
+	margin:auto;	
+}
 .barrapreta{
-    background-color: #c91b1b;
+    background-color: #161616;
+    border-style:solid;
+    border-color: #161616;
+    border-width: 8px ;
+}
+.borda{
+    border-style:solid;
+    border-color: #161616;
+    border-width: 7px ;
 }
 .figure-img{
     object-position: center;
