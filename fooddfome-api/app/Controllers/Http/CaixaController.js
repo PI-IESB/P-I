@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Caixa = use('App/Models/Caixa')
+
 /**
  * Resourceful controller for interacting with caixas
  */
@@ -18,6 +20,7 @@ class CaixaController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    return Caixa.all()
   }
 
   /**
@@ -41,6 +44,9 @@ class CaixaController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const formaPagamento = Caixa.getFormaPagamento();
+    const dados = request.only(formaPagamento);
+    return await Caixa.create(dados);
   }
 
   /**
@@ -76,6 +82,8 @@ class CaixaController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    const formaPagamento = Caixa.getFormaPagamento();
+    return request.only(formaPagamento)
   }
 
   /**

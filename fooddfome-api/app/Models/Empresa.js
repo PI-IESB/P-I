@@ -4,6 +4,9 @@
 const Model = use('Model')
 
 class Empresa extends Model {
+  static getCamposCadastro(){
+    return['nome', 'telefone', 'endereco', 'email', 'cnpj']
+  }
 }
 
 module.exports = Empresa

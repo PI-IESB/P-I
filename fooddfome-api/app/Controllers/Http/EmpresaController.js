@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Empresa = use('App/Models/Empresa')
+
 /**
  * Resourceful controller for interacting with empresas
  */
@@ -18,18 +20,7 @@ class EmpresaController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
-  }
-
-  /**
-   * Render a form to be used for creating a new empresa.
-   * GET empresas/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create ({ request, response, view }) {
+    return Empresa.all()
   }
 
   /**
@@ -37,10 +28,13 @@ class EmpresaController {
    * POST empresas
    *
    * @param {object} ctx
-   * @param {Request} ctx.request
+    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const camposCadastro = Empresa.getCamposCadastro();
+    const dados = request.only(camposCadastro);
+    return await Empresa.create(dados);
   }
 
   /**
@@ -56,18 +50,6 @@ class EmpresaController {
   }
 
   /**
-   * Render a form to update an existing empresa.
-   * GET empresas/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit ({ params, request, response, view }) {
-  }
-
-  /**
    * Update empresa details.
    * PUT or PATCH empresas/:id
    *
@@ -76,6 +58,10 @@ class EmpresaController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+
+    const camposCadastro = Empresa.getCamposCadastro()
+    return request.only(camposCadastro)
+
   }
 
   /**
