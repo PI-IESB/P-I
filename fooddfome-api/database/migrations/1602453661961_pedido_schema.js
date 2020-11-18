@@ -9,7 +9,7 @@ class PedidoSchema extends Schema {
       table.increments()
       table.string('nome', 100).notNullable()
       table.decimal('valor_total', 10).notNullable()
-      table.datetime('data').notNullable()
+      table.date('data').notNullable()
       table.timestamps()
     })
   }

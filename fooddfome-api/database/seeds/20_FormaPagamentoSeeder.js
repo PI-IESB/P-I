@@ -17,13 +17,13 @@ const FormaPagamento = use('App/Models/FormaPagamento')
 class FormaPagamentoSeeder {
   async run () {
 
-    await FormaPagamento.creareMany([
+    await FormaPagamento.createMany([
       {nome: 'Cartão de Débito'},
       {nome: 'Cartão de Crédito'},
       {nome: 'Dinheiro'},
       {nome: 'Ticket Refeição'},
       {nome: 'PicPay'},
-      
+
     ])
   }
 }

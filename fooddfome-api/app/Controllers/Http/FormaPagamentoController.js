@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const FormaPagamento = use('App/Models/FormaPagamento')
+
 /**
  * Resourceful controller for interacting with formapagamentos
  */
@@ -18,6 +20,7 @@ class FormaPagamentoController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    return FormaPagamento.all()
   }
 
   /**
@@ -41,6 +44,9 @@ class FormaPagamentoController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const camposCadastro = FormaPagamento.getCamposCadastro();
+    const dados = request.only(camposCadastro);
+    return await FormaPagamento.create(dados);
   }
 
   /**
@@ -76,6 +82,8 @@ class FormaPagamentoController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    const camposCadastro = FormaPagamento.getCamposCadastro()
+    return request.only(camposCadastro)
   }
 
   /**

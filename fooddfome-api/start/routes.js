@@ -22,3 +22,10 @@ Route.get('/', () => {
 
 Route.resource('/empresas', 'EmpresaController').apiOnly()
 Route.resource('/caixa', 'CaixaController').apiOnly()
+Route.resource('/cliente', 'ClienteController').apiOnly()
+Route.resource('/formapagamento', 'FormaPagamentoController').apiOnly()
+Route.resource('/ingrediente', 'IngredienteController').apiOnly()
+Route.resource('/itempedido', 'ItemPedidoController').apiOnly()
+Route.resource('/pedido', 'PedidoController ').apiOnly()
+Route.resource('/produto', 'ProdutoController').apiOnly()
+Route.resource('/tipoproduto', 'TipoProdutoController').apiOnly()

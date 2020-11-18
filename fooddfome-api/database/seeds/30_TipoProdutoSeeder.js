@@ -16,7 +16,7 @@ const TipoProduto = use('App/Models/TipoProduto')
 
 class TipoProdutoSeeder {
   async run () {
-    await TipoProduto.creareMany([
+    await TipoProduto.createMany([
       {nome: 'Hamburguer'},
       {nome: 'Suco'},
       {nome: 'Creme'},

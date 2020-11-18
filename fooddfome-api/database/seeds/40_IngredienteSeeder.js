@@ -17,7 +17,7 @@ const Ingrediente = use('App/Models/Ingrediente')
 class IngredienteSeeder {
   async run () {
 
-    await Ingrediente.creareMany([
+    await Ingrediente.createMany([
       {nome: 'Hamburguer de Carne'},
       {nome: 'Hamburguer de Frango'},
       {nome: 'Pão Brioche'},

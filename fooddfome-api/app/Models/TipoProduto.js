@@ -4,6 +4,9 @@
 const Model = use('Model')
 
 class TipoProduto extends Model {
+  static getCamposCadastro(){
+    return['descricao']
+  }
 }
 
 module.exports = TipoProduto

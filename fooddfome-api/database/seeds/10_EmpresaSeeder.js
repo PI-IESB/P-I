@@ -17,14 +17,14 @@ const Empresa = use('App/Models/Empresa')
 
 class EmpresaSeeder {
   async run () {
-await Empresa.creareMany([
+await Empresa.createMany([
   {nome: 'Food´d Fome',
   telefone: '955552135',
   endereco: 'Ceilândia Norte - DF',
   email: 'fooddfome@gmail.com',
   cnpj: '21.906.709/0000-9',
    }
-  
+
 ])
 
   }

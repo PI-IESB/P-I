@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Pedido = use('App/Models/Pedido')
+
 /**
  * Resourceful controller for interacting with pedidos
  */
@@ -18,6 +20,7 @@ class PedidoController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    return Pedido.all()
   }
 
   /**
@@ -41,6 +44,9 @@ class PedidoController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const camposCadastro = Pedido.getCamposCadastro();
+    const dados = request.only(camposCadastro);
+    return await Pedido.create(dados);
   }
 
   /**
@@ -76,6 +82,8 @@ class PedidoController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    const camposCadastro = Pedido.getCamposCadastro()
+    return request.only(camposCadastro)
   }
 
   /**

@@ -4,6 +4,9 @@
 const Model = use('Model')
 
 class Pedido extends Model {
+  static getCamposCadastro(){
+    return['nome', 'valor_total', 'data']
+  }
 }
 
 module.exports = Pedido

@@ -4,6 +4,9 @@
 const Model = use('Model')
 
 class ItemPedido extends Model {
+  static getCamposCadastro(){
+    return['descricao', 'quantidade']
+  }
 }
 
 module.exports = ItemPedido

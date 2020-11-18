@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const TipoProduto = use('App/Models/TipoProduto')
+
 /**
  * Resourceful controller for interacting with tipoprodutos
  */
@@ -18,6 +20,7 @@ class TipoProdutoController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    return TipoProduto.all()
   }
 
   /**
@@ -41,6 +44,9 @@ class TipoProdutoController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const camposCadastro = TipoProduto.getCamposCadastro();
+    const dados = request.only(camposCadastro);
+    return await TipoProduto.create(dados);
   }
 
   /**
@@ -76,6 +82,8 @@ class TipoProdutoController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    const camposCadastro = TipoProduto.getCamposCadastro()
+    return request.only(camposCadastro)
   }
 
   /**

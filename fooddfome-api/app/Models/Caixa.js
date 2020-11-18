@@ -4,8 +4,8 @@
 const Model = use('Model')
 
 class Caixa extends Model {
-  static getFormaPagamento(){
-    return['nome', 'telefone', 'endereco', 'email', 'cnpj']
+  static getCamposCadastro(){
+    return['data', 'valor_total', 'taxa_entrega']
   }
 }
 

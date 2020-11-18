@@ -58,7 +58,6 @@ class EmpresaController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
-
     const camposCadastro = Empresa.getCamposCadastro()
     return request.only(camposCadastro)
 

@@ -44,8 +44,8 @@ class CaixaController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
-    const formaPagamento = Caixa.getFormaPagamento();
-    const dados = request.only(formaPagamento);
+    const camposCadastro = Caixa.getCamposCadastro();
+    const dados = request.only(camposCadastro);
     return await Caixa.create(dados);
   }
 
@@ -82,8 +82,8 @@ class CaixaController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
-    const formaPagamento = Caixa.getFormaPagamento();
-    return request.only(formaPagamento)
+    const camposCadastro = Caixa.getCamposCadastro();
+    return request.only(camposCadastro)
   }
 
   /**

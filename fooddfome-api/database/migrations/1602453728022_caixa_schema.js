@@ -7,7 +7,7 @@ class CaixaSchema extends Schema {
   up () {
     this.create('caixas', (table) => {
       table.increments()
-      table.datetime('data').notNullable()
+      table.date('data').notNullable()
       table.decimal('valor_total').notNullable()
       table.integer('taxa_entrega', 10).notNullable()
       table.timestamps()

@@ -9,7 +9,7 @@ class ClienteSchema extends Schema {
       table.increments()
       table.string('nome', 50).notNullable()
       table.string('endereco', 100).notNullable()
-      table.integer('telefone').notNullable()
+      table.string('telefone', 15).notNullable()
       table.string('email', 50).notNullable()
       table.string('sexo', 1).notNullable()
       table.date('data_nascimento').notNullable()

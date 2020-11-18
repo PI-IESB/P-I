@@ -4,6 +4,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Ingrediente = use('App/Models/Ingrediente')
+
 /**
  * Resourceful controller for interacting with ingredientes
  */
@@ -18,6 +20,7 @@ class IngredienteController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    return Ingrediente.all()
   }
 
   /**
@@ -41,6 +44,9 @@ class IngredienteController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    const camposCadastro = Ingrediente.getCamposCadastro();
+    const dados = request.only(camposCadastro);
+    return await Ingrediente.create(dados);
   }
 
   /**
@@ -76,6 +82,9 @@ class IngredienteController {
    * @param {Response} ctx.response
    */
   async update ({ params, request, response }) {
+    const camposCadastro = Ingrediente.getCamposCadastro()
+    return request.only(camposCadastro)
+
   }
 
   /**
