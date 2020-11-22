@@ -83,7 +83,13 @@ class FormaPagamentoController {
    */
   async update ({ params, request, response }) {
     const camposCadastro = FormaPagamento.getCamposCadastro()
-    return request.only(camposCadastro)
+    const dados = request.only(camposCadastro)
+
+    const formapagamento = await FormaPagamento.findOrFail(params.id)
+    formapagamento.merge(dados)
+    formapagamento.save()
+
+    return formapagamento
   }
 
   /**
@@ -95,6 +101,10 @@ class FormaPagamentoController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const formapagamento = await FormaPagamento.findOrFail(params.id)
+
+    formapagamento.delete()
+
   }
 }
 

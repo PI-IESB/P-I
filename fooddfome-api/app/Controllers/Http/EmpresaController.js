@@ -47,6 +47,7 @@ class EmpresaController {
    * @param {View} ctx.view
    */
   async show ({ params, request, response, view }) {
+    return Empresa.findOrFail(params.id)
   }
 
   /**
@@ -59,7 +60,13 @@ class EmpresaController {
    */
   async update ({ params, request, response }) {
     const camposCadastro = Empresa.getCamposCadastro()
-    return request.only(camposCadastro)
+    const dados = request.only(camposCadastro)
+
+    const empresa = await Empresa.findOrFail(params.id)
+    empresa.merge(dados)
+    empresa.save()
+
+    return empresa
 
   }
 
@@ -72,6 +79,9 @@ class EmpresaController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const empresa = await Empresa.findOrFail(params.id)
+
+    empresa.delete()
   }
 }
 

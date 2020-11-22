@@ -83,7 +83,13 @@ class TipoProdutoController {
    */
   async update ({ params, request, response }) {
     const camposCadastro = TipoProduto.getCamposCadastro()
-    return request.only(camposCadastro)
+    const dados = request.only(camposCadastro)
+
+    const tipoproduto = await TipoProduto.findOrFail(params.id)
+    tipoproduto.merge(dados)
+    tipoproduto.save()
+
+    return tipoproduto
   }
 
   /**
@@ -95,6 +101,9 @@ class TipoProdutoController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const tipoproduto = await TipoProduto.findOrFail(params.id)
+
+    tipoproduto.delete()
   }
 }
 

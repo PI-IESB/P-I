@@ -83,7 +83,14 @@ class CaixaController {
    */
   async update ({ params, request, response }) {
     const camposCadastro = Caixa.getCamposCadastro();
-    return request.only(camposCadastro)
+    const dados = request.only(camposCadastro)
+
+    
+    const caixa = await Caixa.findOrFail(params.id)
+    caixa.merge(dados)
+    caixa.save()
+
+    return caixa
   }
 
   /**
@@ -95,6 +102,9 @@ class CaixaController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const caixa = await Caixa.findOrFail(params.id)
+
+    caixa.delete()
   }
 }
 

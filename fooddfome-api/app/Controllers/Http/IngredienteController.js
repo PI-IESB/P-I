@@ -83,7 +83,13 @@ class IngredienteController {
    */
   async update ({ params, request, response }) {
     const camposCadastro = Ingrediente.getCamposCadastro()
-    return request.only(camposCadastro)
+    const dados = request.only(camposCadastro)
+
+    const ingrediente = await Ingrediente.findOrFail(params.id)
+    ingrediente.merge(dados)
+    ingrediente.save()
+
+    return ingrediente
 
   }
 
@@ -96,6 +102,9 @@ class IngredienteController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const ingrediente = await Ingrediente.findOrFail(params.id)
+
+    ingrediente.delete()
   }
 }
 

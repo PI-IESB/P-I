@@ -83,7 +83,13 @@ class ProdutoController {
    */
   async update ({ params, request, response }) {
     const camposCadastro = Produto.getCamposCadastro()
-    return request.only(camposCadastro)
+    const dados = request.only(camposCadastro)
+
+    const produto = await Produto.findOrFail(params.id)
+    produto.merge(dados)
+    produto.save()
+
+    return produto
   }
 
   /**
@@ -95,6 +101,9 @@ class ProdutoController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const produto = await Produto.findOrFail(params.id)
+
+    produto.delete()
   }
 }
 

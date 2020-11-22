@@ -83,7 +83,13 @@ class ItemPedidoController {
    */
   async update ({ params, request, response }) {
     const camposCadastro = ItemPedido.getCamposCadastro()
-    return request.only(camposCadastro)
+    const dados = request.only(camposCadastro)
+
+    const itempedido = await ItemPedido.findOrFail(params.id)
+    itempedido.merge(dados)
+    itempedido.save()
+
+    return itempedido
   }
 
   /**
@@ -95,6 +101,9 @@ class ItemPedidoController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const itempedido = await ItemPedido.findOrFail(params.id)
+
+    itempedido.delete()
   }
 }
 

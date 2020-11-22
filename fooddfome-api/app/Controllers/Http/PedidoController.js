@@ -83,7 +83,13 @@ class PedidoController {
    */
   async update ({ params, request, response }) {
     const camposCadastro = Pedido.getCamposCadastro()
-    return request.only(camposCadastro)
+    const dados = request.only(camposCadastro)
+
+    const pedido = await Pedido.findOrFail(params.id)
+    pedido.merge(dados)
+    pedido.save()
+
+    return pedido
   }
 
   /**
@@ -95,6 +101,9 @@ class PedidoController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const pedido = await Pedido.findOrFail(params.id)
+
+    pedido.delete()
   }
 }
 

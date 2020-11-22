@@ -83,7 +83,13 @@ class ClienteController {
    */
   async update ({ params, request, response }) {
     const camposCadastro = Cliente.getCamposCadastro()
-    return request.only(camposCadastro)
+    const dados = request.only(camposCadastro)
+
+    const cliente = await Cliente.findOrFail(params.id)
+    cliente.merge(dados)
+    cliente.save()
+
+    return empresa
   }
 
   /**
@@ -95,6 +101,9 @@ class ClienteController {
    * @param {Response} ctx.response
    */
   async destroy ({ params, request, response }) {
+    const cliente = await Cliente.findOrFail(params.id)
+
+    cliente.delete()
   }
 }
 
