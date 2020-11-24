@@ -1,6 +1,7 @@
 import React from 'react'
 import './Cabecalho.css'
 import { Nav, Button, Image, Col, Figure, Row, Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 export default (props) => {
  
@@ -48,15 +49,17 @@ export default (props) => {
                                 <Nav.Link href="link-2"><Image src="/img/perfil.png" /></Nav.Link>
                             </Nav.Item></Col>
                             <Col md={{ span: 0, offset: 0 }}><Nav.Item>
-                                <Nav.Link href="link-2"><Image src="/img/sobre-nos.png" /></Nav.Link>
+                                <Nav.Link href="/sobreNos"><Image src="/img/sobre-nos.png" /></Nav.Link>
                             </Nav.Item></Col>
                             <Col md={{ span: 3, offset: 0 }}><Nav.Item>
-                                <Nav.Link href="link-2"><Image src="/img/meus-pedidos.png" /></Nav.Link>
+                                <Nav.Link href="link-2"><Image src="/img/login.png" /></Nav.Link>
                             </Nav.Item></Col>
                         </Nav>
                     </Container>
                 </Col>
-                <Col><Button variant="success" size="lg"><Image src="/img/but.png" /></Button></Col>
+                <Col>
+                <Link to="/carrinho"><Button variant="success" size="lg"><Image src="/img/but.png" /></Button></Link>
+                </Col>
             </Row >
             <br />
         </>
