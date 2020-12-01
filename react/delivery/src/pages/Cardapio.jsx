@@ -43,7 +43,9 @@ export default () => {
             <Card.ImgOverlay className="bot">
               <Row>
                 <Col xs={2} md={{ span: 4, offset: 0 }}>
+                  <Link to={{pathname:'/carrinho', state:{id:1}}}>
                   <Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button>
+                  </Link>
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xtufao}>
@@ -53,7 +55,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
 
         <Col xs={2} md={{ span: 0, offset: 0 }}>
           <Card style={{ width: '20rem' }} className="bg-dark text-white">
@@ -61,7 +63,8 @@ export default () => {
             <Card.ImgOverlay className="bot">
               <Row>
                 <Col xs={2} md={{ span: 4, offset: 0 }}>
-                  <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
+                  <Link to={{pathname:'carrinho', state:{id:2}}}>
+                  <Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xvacina}>
@@ -71,7 +74,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
 
         <Col xs={2} md={{ span: 0, offset: 0 }}>
           <Card style={{ width: '20rem' }} className="bg-dark text-white">
@@ -79,7 +82,8 @@ export default () => {
             <Card.ImgOverlay className="bot">
               <Row>
                 <Col xs={2} md={{ span: 4, offset: 0 }}>
-                  <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
+                  <Link to={{pathname:'carrinho', state:{id:3}}}>
+                  <Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xvacina}>
@@ -89,7 +93,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
 
         <Col xs={2} md={{ span: 0, offset: 0 }}>
           <Card style={{ width: '20rem' }} className="bg-dark text-white">
@@ -97,7 +101,8 @@ export default () => {
             <Card.ImgOverlay className="bot">
               <Row>
                 <Col xs={2} md={{ span: 4, offset: 0 }}>
-                  <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
+                  <Link to={{pathname:'carrinho', state:{id:5}}}>
+                  <Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xvacina}>
@@ -107,7 +112,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
       </Row>
 
       {/* ------------------------PARTE 2----------------------- */}
@@ -135,13 +140,14 @@ export default () => {
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xtufao}>
-                    <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/ico.png" /></Button></Link>
+                    <Link to={{pathname:'carrinho', state:{id:8}}}>
+                    <Button variant="success" size="sm"><Image className="bola" src="/img/ico.png" /></Button></Link>
                   </OverlayTrigger>
                 </Col>
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
 
         <Col xs={2} md={{ span: 0, offset: 0 }}>
           <Card style={{ width: '20rem' }} className="bg-dark text-white">
@@ -149,7 +155,8 @@ export default () => {
             <Card.ImgOverlay className="bot">
               <Row>
                 <Col xs={2} md={{ span: 4, offset: 0 }}>
-                  <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
+                  <Link to={{pathname:'carrinho', state:{id:4}}}>
+                  <Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xvacina}>
@@ -159,7 +166,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
 
         <Col xs={2} md={{ span: 0, offset: 0 }}>
           <Card style={{ width: '20rem' }} className="bg-dark text-white">
@@ -167,7 +174,8 @@ export default () => {
             <Card.ImgOverlay className="bot">
               <Row>
                 <Col xs={2} md={{ span: 4, offset: 0 }}>
-                  <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
+                  <Link to={{pathname:'carrinho', state:{id:3}}}>
+                  <Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xvacina}>
@@ -177,7 +185,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
 
         <Col xs={2} md={{ span: 0, offset: 0 }}>
           <Card style={{ width: '20rem' }} className="bg-dark text-white">
@@ -185,7 +193,8 @@ export default () => {
             <Card.ImgOverlay className="bot">
               <Row>
                 <Col xs={2} md={{ span: 4, offset: 0 }}>
-                  <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
+                  <Link to={{pathname:'carrinho', state:{id:7}}}>
+                  <Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xvacina}>
@@ -195,7 +204,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
       </Row>
 
       <p></p>
@@ -223,13 +232,14 @@ export default () => {
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xtufao}>
-                    <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/ico.png" /></Button></Link>
+                    <Link to={{pathname:'carrinho', state:{id: 3,combo:true}}}>
+                    <Button variant="success" size="sm"><Image className="bola" src="/img/ico.png" /></Button></Link>
                   </OverlayTrigger>
                 </Col>
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
 
         <Col xs={2} md={{ span: 0, offset: 0 }}>
           <Card style={{ width: '20rem' }} className="bg-dark text-white">
@@ -237,7 +247,8 @@ export default () => {
             <Card.ImgOverlay className="bot2">
               <Row>
                 <Col xs={2} md={{ span: 4, offset: 0 }}>
-                  <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
+                  <Link to={{pathname:'carrinho', state:{id: 8,combo:true}}}>
+                  <Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xvacina}>
@@ -247,7 +258,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
 
         <Col xs={2} md={{ span: 0, offset: 0 }}>
           <Card style={{ width: '20rem' }} className="bg-dark text-white">
@@ -255,7 +266,8 @@ export default () => {
             <Card.ImgOverlay className="bot2">
               <Row>
                 <Col xs={2} md={{ span: 4, offset: 0 }}>
-                  <Link to="/carrinho"><Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
+                  <Link to={{pathname:'carrinho', state:{id: 3,combo:true}}}>
+                  <Button variant="success" size="sm"><Image className="bola" src="/img/dol.png" /></Button></Link>
                 </Col>
                 <Col xs={2} md={{ span: 0, offset: 0 }}>
                   <OverlayTrigger trigger="click" placement="bottom" overlay={xvacina}>
@@ -265,7 +277,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
 
         <Col xs={2} md={{ span: 0, offset: 0 }}>
           <Card style={{ width: '20rem' }} className="bg-dark text-white">
@@ -283,7 +295,7 @@ export default () => {
               </Row>
             </Card.ImgOverlay>
           </Card>
-        </Col >
+        </Col>
       </Row>
 
       <p></p>
