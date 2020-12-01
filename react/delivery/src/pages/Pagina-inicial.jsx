@@ -7,31 +7,33 @@ export default () => {
   return (
     <Pagina>
       <Row false="noGutters">
-        <Col >
-          <Carousel>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="/img/slide1.png"
-                alt="First slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="/img/slide2.png"
-                alt="Third slide"
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="/img/slide3.png"
-                alt="Third slide"
-              />
-            </Carousel.Item>
-          </Carousel>
-        </Col>
+        <div class="container-fluid">
+          <Col >
+            <Carousel>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="/img/slide1.png"
+                  alt="First slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="/img/slide2.png"
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="/img/slide3.png"
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+            </Carousel>
+          </Col>
+        </div>
       </Row>
     </Pagina>
 

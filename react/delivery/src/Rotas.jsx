@@ -4,6 +4,7 @@ import Cabecalho from './components/Cabecalho'
 import Cardapio from './pages/Cardapio'
 import Carrinho from './pages/Carrinho'
 import PaginaInicial from './pages/Pagina-inicial'
+import Perfil from './pages/Perfil'
 import SobreNos from './pages/SobreNos'
 
 export default () => {
@@ -16,6 +17,7 @@ export default () => {
                 <Route exact path="/cardapio" component={Cardapio} />
                 <Route exact path="/carrinho" component={Carrinho} />
                 <Route exact path="/sobreNos" component={SobreNos} />
+                <Route exact path="/perfil" component={Perfil} />
             </BrowserRouter>
         </>
     )
