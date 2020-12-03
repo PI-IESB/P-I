@@ -1,7 +1,7 @@
 import React from 'react'
 import Pagina from '../components/Pagina'
 import {useLocation} from 'react-router-dom'
-import styles from './styles'
+// import styles from './styles'
 export default () => {
   const sanduiches = [
     {id: 1, Nome:'x-tufão'},

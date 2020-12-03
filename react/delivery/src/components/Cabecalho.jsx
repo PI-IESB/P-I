@@ -55,7 +55,7 @@ export default (props) => {
                                 <Nav.Link href="/sobreNos"><Image src="/img/sobre-nos.png" /></Nav.Link>
                             </Nav.Item></Col>
                             <Col md={{ span: 3, offset: 0 }}><Nav.Item>
-                                <Nav.Link href="link-2"><Image src="/img/login.png" /></Nav.Link>
+                                <Nav.Link href="login"><Image src="/img/login.png" /></Nav.Link>
                             </Nav.Item></Col>
                         </Nav>
                     </Container>
