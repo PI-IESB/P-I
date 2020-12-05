@@ -13,8 +13,8 @@ export default {
     },
     telefone: {
         required: mensagens.required,
-        minLength: {value: 15, message:  mensagens.minLength + '(Mínimo de 15 caracteres.)'},
-        maxLength: {value: 16, message:  mensagens.maxLength + '(Máximo de 16 caracteres.)'},
+        minLength: {value: 14, message:  mensagens.minLength + '(Mínimo de 17 caracteres.)'},
+        maxLength: {value: 17, message:  mensagens.maxLength + '(Máximo de 14 caracteres.)'},
     },
     email: {
         required: mensagens.required,

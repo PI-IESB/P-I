@@ -7,6 +7,12 @@ body{
     border-color: #c91b1b;
     border-width: 8px ;
 }
+.cartao{
+    background-color: #c91b1b;
+    }
+.cartaoint{
+    background-color: #b4b4b4;
+    }
 .bot{
     padding-top:82%;
 	padding-left:30%;

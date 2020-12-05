@@ -28,8 +28,7 @@ const [dados, setDados] = useState({})
 
     function handleChange(event){
         // console.log(event.target.getAttribute("mask"))
-        const mascara = event.target.getAttribute("mask")
-        
+        const mascara = event.target.getAttribute("mask")    
         const valor = mascara ? mask(unMask(event.target.value), mascara) : event.target.value
         setDados({...dados,[event.target.name]: valor})
       }
@@ -41,7 +40,7 @@ const [dados, setDados] = useState({})
             <Row sm={2}>
             <Container>
             <Card className="text-center" className="mb-3">
-              <Card.Header className="bg-danger text-white ">Cadastro de Cliente</Card.Header>
+              <Card.Header className="cartao text-white "><strong>Cadastro de Cliente</strong></Card.Header>
                 <Card.Body>
                  
                   <Form.Group controlId="nome">
@@ -68,14 +67,14 @@ const [dados, setDados] = useState({})
                     <Form.Label>Telefone: </Form.Label>
                     <Form.Control ref={register(CadastroValidator.telefone)} isInvalid={errors.telefone}
                     onChange={handleChange} value={dados.telefone}
-                    name='telefone' type="text" mask="(99) 99999-9999" />
+                    name='telefone' type="text" mask={'(99) 9999-9999'} />
                     <Form.Control.Feedback type="invalid">{errors.telefone?.message}</Form.Control.Feedback>
                   </Form.Group>
                   <Form.Group controlId="email">
                     <Form.Label>Email: </Form.Label>
                     <Form.Control ref={register(CadastroValidator.email)} isInvalid={errors.email}
                     onChange={handleChange} value={dados.email}
-                    name='email' type="text" mask="(99) 99999-9999" />
+                    name='email' type="text"/>
                     <Form.Control.Feedback type="invalid">{errors.email?.message}</Form.Control.Feedback>
                   </Form.Group>
 
@@ -91,18 +90,19 @@ const [dados, setDados] = useState({})
                     <Form.Label>Data de Nascimento: </Form.Label>
                     <Form.Control ref={register(CadastroValidator.data_nascimento)} isInvalid={errors.data_nascimento}
                     onChange={handleChange} value={dados.data_nascimento}
-                    name='data_nascimento' type="text" mask="99.999-999" />
+                    name='data_nascimento' type="text" mask="99/99/9999" />
                     <Form.Control.Feedback type="invalid">{errors.data_nascimento?.message}</Form.Control.Feedback>
                   </Form.Group>
 
                   <Form.Group controlId="sexo">
                       <Form.Check ref={register} value={"Privada"} name='sexo' type="radio"  inline label="Masculino" /> 
-                      <Form.Check ref={register} value={"Publica"} name="sexo" type="radio" inline label="Feminino" />                      <Form.Control.Feedback type="invalid">{errors.nome?.message}</Form.Control.Feedback>
+                      <Form.Check ref={register} value={"Publica"} name="sexo" type="radio" inline label="Feminino" />                     
+                      <Form.Control.Feedback type="invalid">{errors.nome?.message}</Form.Control.Feedback>
                       <Form.Control.Feedback type="invalid">{errors.nome?.message}</Form.Control.Feedback>
                   </Form.Group>  
 
                 </Card.Body>
-                <Card.Footer className="bg-danger"></Card.Footer>
+                <Card.Footer className="cartao"></Card.Footer>
             </Card>
             <div className="mb-3" className="text-center">
               <Button className="mr-2" variant="primary" type="submit" >Salvar</Button>
@@ -110,6 +110,7 @@ const [dados, setDados] = useState({})
                 <Button variant="danger">Voltar</Button>
               </Link>
             </div>
+            <p></p>
             </Container>    
             </Row>  
           </Form>
