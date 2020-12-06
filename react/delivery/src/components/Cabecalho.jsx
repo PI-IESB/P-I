@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Cabecalho.css'
 import { Nav, Button, Image, Col, Figure, Row, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import CarrinhoService from '../services/CarrinhoService'
 
 export default (props) => {
 
+    const [produtos, setProdutos] = useState([props]);
+
+    useEffect(() => {
+        setProdutos(CarrinhoService.getAll())
+      }, [props])
 
     return (
 
@@ -62,7 +68,7 @@ export default (props) => {
                     </Container>
                 </Col>
                 <Col>
-                    <Link to="/carrinho"><Button variant="success" size="lg"><Image src="/img/but.png" /></Button></Link>
+                    <Link to="/carrinho"><Button variant="success" size="lg"><Image src="/img/but.png" /> ({produtos.length})</Button></Link>
                 </Col>
             </Row >
             <br />

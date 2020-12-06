@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Pagina from '../components/Pagina'
 import { Row, Col, Button, Image, Card, Popover, OverlayTrigger, Container } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import CarrinhoService from '../services/CarrinhoService';
 
 const xtufao = (
     <Popover id="popover-basic">
         <Popover.Title as="h3">Ingredientes</Popover.Title>
-        <Popover.Content>
-            Queijo, Alfaçe, Carne, Tomate...
-    </Popover.Content>
+        <Popover.Content>Queijo, Alfaçe, Carne, Tomate...</Popover.Content>
     </Popover>
 );
 
@@ -20,13 +17,9 @@ const Cardapio = (props) => {
         const id = props.match.params.id
         const carros = CarrinhoService.get(id)
         setDados(carros)
-      }, [])
+    }, [])
 
     const [dados, setDados] = useState({})
-
-
-   
-
 
     const tradicionais = [
         { id: 1, img: "/img/X-tufão.png", valor: 8.99 },
@@ -55,7 +48,7 @@ const Cardapio = (props) => {
 
     return (
         <Pagina>
-            {/* ------------------------PARTE 1----------------------- */}
+            {/* ------------------------PARTE 1 - (Os Tradicionais)----------------------- */}
             <Row className="align-center">
                 <Col className="barrapreta" variant="align-center" md={{ span: 12, offset: 0 }}>
                     <Container className="mr-3">
@@ -78,11 +71,11 @@ const Cardapio = (props) => {
                                 <Card.Footer className="barrapreta">
                                     <Row>
                                         <Col md={7}>
-                                            <Button variant="success" onClick={() => enviarDados(item)}><strong>R$ {item.valor}</strong></Button>
+                                            <Button size={"lg"} variant="success" onClick={() => enviarDados(item)}><strong>R$ {item.valor}</strong></Button>
                                         </Col>
                                         <Col>
                                             <OverlayTrigger trigger="click" placement="bottom" overlay={xtufao}>
-                                                <Button variant="primary"><Image className="bola" src="/img/ico.png" /></Button>
+                                                <Button size={"lg"} variant="primary"><Image className="bola" src="/img/ico.png" /></Button>
                                             </OverlayTrigger>
                                         </Col>
                                     </Row>
@@ -95,7 +88,7 @@ const Cardapio = (props) => {
                 </Col>
             </Row>
 
-            {/* ------------------------PARTE 2----------------------- */}
+            {/* ------------------------PARTE 2 - (Os Queridinhos)----------------------- */}
             <p></p>
 
             <Row>
@@ -120,11 +113,11 @@ const Cardapio = (props) => {
                                 <Card.Footer className="barrapreta">
                                     <Row>
                                         <Col md={7}>
-                                        <Button variant="success" onClick={() => enviarDados(item)}><strong>R$ {item.valor}</strong></Button>
+                                            <Button size={"lg"} variant="success" onClick={() => enviarDados(item)}><strong>R$ {item.valor}</strong></Button>
                                         </Col>
                                         <Col>
                                             <OverlayTrigger trigger="click" placement="bottom" overlay={xtufao}>
-                                                <Button variant="primary"><Image className="bola" src="/img/ico.png" /></Button>
+                                                <Button size={"lg"} variant="primary"><Image className="bola" src="/img/ico.png" /></Button>
                                             </OverlayTrigger>
                                         </Col>
                                     </Row>
@@ -137,7 +130,7 @@ const Cardapio = (props) => {
                 </Col>
             </Row>
 
-            {/* ------------------------PARTE 3----------------------- */}
+            {/* ------------------------PARTE 3 - (Combos)----------------------- */}
             <p></p>
 
             <Row>
@@ -162,11 +155,11 @@ const Cardapio = (props) => {
                                 <Card.Footer className="barrapreta">
                                     <Row>
                                         <Col md={7}>
-                                        <Button variant="success" onClick={() => enviarDados(item)}><strong>R$ {item.valor}</strong></Button>
+                                            <Button size={"lg"} variant="success" onClick={() => enviarDados(item)}><strong>R$ {item.valor}</strong></Button>
                                         </Col>
                                         <Col>
                                             <OverlayTrigger trigger="click" placement="bottom" overlay={xtufao}>
-                                                <Button variant="primary"><Image className="bola" src="/img/ico.png" /></Button>
+                                                <Button size={"lg"} variant="primary"><Image className="bola" src="/img/ico.png" /></Button>
                                             </OverlayTrigger>
                                         </Col>
                                     </Row>

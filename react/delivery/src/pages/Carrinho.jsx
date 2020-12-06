@@ -6,7 +6,7 @@ import CarrinhoService from '../services/CarrinhoService'
 export default (props) => {
   const id = props.match.params.id
 
-  const [produtos, setProdutos] = useState([]);
+  const [produtos, setProdutos] = useState([props]);
 
   const valorTotal = produtos.reduce((acc, curr) =>  acc + curr.valor, 0);
   var valorTotalDois = valorTotal.toFixed(2);
