@@ -35,7 +35,7 @@
 #### Banco de Dados:
 - Jeferson Moraes - (Scrum Master) - (Developer)
 - Abner - (PO) - (Developer)
-#### Oltros:
+#### Outros:
 - Matheus - (Developer)
 - Gabriel Moisés - (Developer) 
 - Wesley Júnior - (Developer) 
