@@ -7,13 +7,13 @@
 - Pensar no tema do projeto-[OK]
 - Criar um projeto no Github-[OK]
 - Vincular o prometo do github no Zenhub-[OK]
-- Frontend (React)-[  ]
-- Backend (Adonis)-[  ]
+- Frontend (React)-[OK]
+- Backend (Adonis)-[OK]
 - Banco de Dados (mysql)-[OK]
 
 #### Agradaria bastante o professor, se usasse: 
-- Migrations-[  ]
-- Seeders-[  ]
+- Migrations-[OK]
+- Seeders-[OK]
 
 #### Ações:
 - Listar (com pesquisa)-[  ]
