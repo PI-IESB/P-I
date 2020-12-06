@@ -2,25 +2,26 @@ import React, { useEffect, useState } from 'react'
 import Pagina from '../components/Pagina'
 import { Badge, Button, Card, CardDeck, Col, Container, Image, Row } from 'react-bootstrap'
 import CarrinhoService from '../services/CarrinhoService'
+import { Link } from 'react-router-dom'
 
 export default (props) => {
   const id = props.match.params.id
 
   const [produtos, setProdutos] = useState([props]);
 
-  const valorTotal = produtos.reduce((acc, curr) =>  acc + curr.valor, 0);
+  const valorTotal = produtos.reduce((acc, curr) => acc + curr.valor, 0);
   var valorTotalDois = valorTotal.toFixed(2);
-
-  const handleClick = (id) => {
-    if (window.confirm("Deseja realmente remover o pedido")) { 
-      CarrinhoService.delete(id)
-      setProdutos(CarrinhoService.getAll())
-    }
-  }
 
   useEffect(() => {
     setProdutos(CarrinhoService.getAll())
   }, [props])
+
+  const handleClick = (id) => {
+    if (window.confirm("Deseja realmente remover esse pedido?")) {
+      CarrinhoService.delete(id)
+      setProdutos(CarrinhoService.getAll())
+    }
+  }
 
   return (
     <Pagina>
@@ -66,14 +67,16 @@ export default (props) => {
               <Card.Body>
                 <Card.Title><h3><strong>R$ {valorTotalDois}</strong></h3></Card.Title>
               </Card.Body>
-              <Card.Footer className="text-muted"><Button size="lg" variant="success"><strong>Finalizar pedido</strong></Button></Card.Footer>
+              <Card.Footer className="text-muted">
+              <Link to="/pagamento"><Button size="lg" variant="success"><strong>Finalizar pedido</strong></Button></Link>
+              </Card.Footer>
             </Card>
             <Row>
               <Col></Col>
               <Col>
-              <h1>
-                <Badge variant="primary">FRETE GRÁTIS</Badge>
-              </h1>
+                <h1>
+                  <Badge variant="primary">FRETE GRÁTIS</Badge>
+                </h1>
               </Col>
               <Col></Col>
             </Row>
