@@ -27,15 +27,18 @@
 #### Orientador:
 - Orion Mesquita
 #### Frontend:
-- Gabriel Moisés - (Developer) 
-- Wesley Júnior - (Developer) 
+- Jeferson Moraes - (Scrum Master) - (Developer)
+- Abner - (PO) - (Developer)
 #### Backend:
-- Matheus - (Developer)
-- Yan - (Developer)
-- Gabriel Rocha - (Developer)
+- Jeferson Moraes - (Scrum Master) - (Developer)
+- Abner - (PO) - (Developer)
 #### Banco de Dados:
 - Jeferson Moraes - (Scrum Master) - (Developer)
 - Abner - (PO) - (Developer)
+#### Oltros:
+- Matheus - (Developer)
+- Gabriel Moisés - (Developer) 
+- Wesley Júnior - (Developer) 
 
 ## Cardápio!
 
