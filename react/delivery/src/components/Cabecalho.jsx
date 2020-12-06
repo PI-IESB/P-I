@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Cabecalho.css'
 import { Nav, Button, Image, Col, Figure, Row, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 export default (props) => {
+
 
     return (
 

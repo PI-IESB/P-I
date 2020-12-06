@@ -1,47 +1,86 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Pagina from '../components/Pagina'
-import {useLocation} from 'react-router-dom'
-// import styles from './styles'
-export default () => {
-  const sanduiches = [
-    {id: 1, Nome:'x-tufão'},
-    {id: 2, Nome:'x-vacina'},
-    {id: 3, Nome:'x-emergencial'},
-    {id: 4, Nome:'x-gafanhoto'},
-    {id: 5, Nome:'x-corona'},
-    {id: 6, Nome:'x-bolsafamilia'},
-    {id: 7, Nome:'x-cloroquina'},
-    {id: 8, Nome:'x-aglomeração'},
-  ]
-  const combo = [
-    {id: 9,  Nome:'combo infectado', acompanhamento1:'x-tufao', acompanhamento2:'batata atleta', acompanhamento3:'coca nuclear'},
-    {id: 10, Nome:'combo sem mascara', acompanhamento1:'x-cloroquina', acompanhamento2:'batata atleta', acompanhamento3:'coca nuclear'},
-    {id: 11, Nome:'combo 2020', acompanhamento1:'x-corona', acompanhamento2:'batata atleta', acompanhamento3:'coca nuclear'},
-    {id: 12, Nome:'combo 1.0', acompanhamento1:'x-corona', acompanhamento2:'x-gafanhoto', acompanhamento3:'batata atleta', acompanhamento4:'coca nuclear'}
+import { Badge, Button, Card, CardDeck, Col, Container, Image, Row } from 'react-bootstrap'
+import CarrinhoService from '../services/CarrinhoService'
 
-  ]
-    const location= useLocation();
-  const Pedido=[];
-  if(location.state !== undefined){
-  if(location.state.combo !== undefined){
-    Pedido.push(combo.filter(combo => combo.id === location.state.id));
-    if(localStorage.getItem('pedido') !== undefined){
-      Pedido.push(JSON.parse(localStorage.getItem('pedido')));
-      localStorage.setItem('pedido', JSON.stringify(Pedido));
-      console.log(Pedido);
-    }
-    else{
-      localStorage.setItem('pedido', JSON.stringify(Pedido));
+export default (props) => {
+  const id = props.match.params.id
+
+  const [produtos, setProdutos] = useState([]);
+
+  const valorTotal = produtos.reduce((acc, curr) =>  acc + curr.valor, 0);
+  var valorTotalDois = valorTotal.toFixed(2);
+
+  const handleClick = (id) => {
+    if (window.confirm("Deseja realmente remover o pedido")) { 
+      CarrinhoService.delete(id)
+      setProdutos(CarrinhoService.getAll())
     }
   }
-  else{
-    Pedido.push(sanduiches.filter(hamburguer => hamburguer.id === location.state.id));
-    console.log(Pedido);
-  }
-   }
+
+  useEffect(() => {
+    setProdutos(CarrinhoService.getAll())
+  }, [props])
+
   return (
     <Pagina>
-   
+
+      <Row>
+        <Col className="barrapreta" md={{ span: 12, offset: 0 }}>
+          <Container className="mr-3">
+            <Image src="/img/carrinho nome.png" />
+          </Container>
+        </Col>
+      </Row>
+
+      <p />
+
+      <div class="container-fluid">
+        <Row>
+          <Col md={{ span: 9, offset: 0 }}>
+            <Row>
+              {produtos.map((item, idx) => (
+                <div key={idx}>
+                  <div class="container-fluid">
+                    <CardDeck>
+                      <Card className="bg-dark text-white mb-3">
+                        <Card.Img className="borda" src={item.img} alt="Card image" />
+                        <Card.Footer className="barrapreta">
+                          <Row>
+                            <Col md={{ span: 0, offset: 3 }}>
+                              <Button variant="danger" onClick={() => handleClick(id)}><strong>Remover</strong></Button>
+                            </Col>
+                          </Row>
+                        </Card.Footer>
+                      </Card>
+                    </CardDeck>
+                  </div>
+                </div>
+              ))}
+            </Row>
+          </Col>
+          <p />
+          <Col md={{ span: 3, offset: 0 }}>
+            <Card className="text-center text-white barrapreta mb-3">
+              <Card.Header><h3><strong>Total</strong></h3></Card.Header>
+              <Card.Body>
+                <Card.Title><h3><strong>R$ {valorTotalDois}</strong></h3></Card.Title>
+              </Card.Body>
+              <Card.Footer className="text-muted"><Button size="lg" variant="success"><strong>Finalizar pedido</strong></Button></Card.Footer>
+            </Card>
+            <Row>
+              <Col></Col>
+              <Col>
+              <h1>
+                <Badge variant="primary">FRETE GRÁTIS</Badge>
+              </h1>
+              </Col>
+              <Col></Col>
+            </Row>
+
+          </Col>
+        </Row>
+      </div>
     </Pagina>
 
   )
