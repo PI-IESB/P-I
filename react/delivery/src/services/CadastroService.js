@@ -4,7 +4,8 @@ class cadastroService {
       return  cadastro ? cadastro : []
     }
     get(id) {
-       console.log(id)
+      let cadastro = this.getAll()
+      return cadastro[id] ? cadastro[id] : {}
     }
     create(data) {
       let cadastro = this.getAll()
@@ -12,7 +13,10 @@ class cadastroService {
       localStorage.setItem('cadastro', JSON.stringify(cadastro))
     }
   
-    update(data) {
+    update(id, data) {
+      let cadastro = this.getAll()
+      cadastro.splice(id, 1, data)
+      localStorage.setItem('cadastro', JSON.stringify(cadastro))
       console.log(data)
     }
     delete(id) {

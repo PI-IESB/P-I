@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Badge, Button, Card, Col, Container, Form, Nav, Row } from 'react-bootstrap'
+import { Badge, Button, Card, Col, Container, Form, Row } from 'react-bootstrap'
 import Pagina from '../components/Pagina'
 import { Link, withRouter } from 'react-router-dom/cjs/react-router-dom.min'
 import { useForm } from 'react-hook-form'

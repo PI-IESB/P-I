@@ -21,6 +21,7 @@ export default () => {
                 <Route exact path="/carrinho" component={Carrinho} />
                 <Route exact path="/sobreNos" component={SobreNos} />
                 <Route exact path="/perfil" component={Perfil} />
+                <Route exact path="/cadastroperfil/:id" component={Cadastro} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/cadastro" component={Cadastro} />
                 <Route exact path="/pagamento" component={Pagamento} />

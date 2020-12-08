@@ -4,7 +4,8 @@ class loginService {
       return  login ? login : []
     }
     get(id) {
-       console.log(id)
+      let login = this.getAll()
+      return login[id] ? login[id] : {}
     }
     create(data) {
       let login = this.getAll()
@@ -12,7 +13,10 @@ class loginService {
       localStorage.setItem('login', JSON.stringify(login))
     }
   
-    update(data) {
+    update(id, data) {
+      let login = this.getAll()
+      login.splice(id, 1, data)
+      localStorage.setItem('login', JSON.stringify(login))
       console.log(data)
     }
     delete(id) {

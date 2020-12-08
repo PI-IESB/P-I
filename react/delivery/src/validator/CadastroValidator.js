@@ -41,4 +41,9 @@ export default {
         minLength: {value: 8, message:  mensagens.minLength + '(Mínimo de 8 caracteres.)'},
         maxLength: {value: 10, message:  mensagens.maxLength + '(Máximo de 10 caracteres.)'},
     },
+    senha: {
+        required: mensagens.required,
+        minLength: {value: 6, message:  mensagens.minLength + '(Mínimo de 6 caracteres.)'},
+        maxLength: {value: 10, message:  mensagens.maxLength + '(Máximo de 10 caracteres.)'},
+    },
 }    
